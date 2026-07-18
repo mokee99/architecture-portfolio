@@ -143,7 +143,7 @@ h6 {
 
 .navbar {
     position: absolute;
-    right: 0;
+    right: 20px;
     z-index: 1000;
 }
 
@@ -297,7 +297,11 @@ body.menu-open {
     display: flex;
     flex-direction: column;
     gap: 24px;
+    padding-top: 72px;
+    padding-bottom: 72px;
 }
+
+
 
 .nav-links-group {
     display: flex;
@@ -423,10 +427,63 @@ body.menu-open {
     font-size: 20px;
 }
 
-
 @media (max-width: 992px) {
     .footer-label,
     .links {
         font-size: 18px;
+    }
+}
+
+/* =========================
+   FOOTER REVEAL
+========================= */
+
+.footer-heading-reveal {
+    overflow: hidden;
+    clip-path: inset(0 0 100% 0);
+
+    opacity: 0;
+    transform: translateY(40px);
+
+    transition:
+        clip-path 1000ms cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 800ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 1000ms cubic-bezier(0.22, 1, 0.36, 1);
+
+    will-change: clip-path, opacity, transform;
+}
+
+.footer-heading-reveal.is-visible {
+    clip-path: inset(0 0 0 0);
+
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.footer-info-reveal {
+    opacity: 0;
+    transform: translateY(24px);
+
+    transition:
+        opacity 800ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 800ms cubic-bezier(0.22, 1, 0.36, 1);
+
+    will-change: opacity, transform;
+}
+
+.footer-info-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .footer-heading-reveal,
+    .footer-info-reveal,
+    .footer-heading-reveal.is-visible,
+    .footer-info-reveal.is-visible {
+        clip-path: none;
+        opacity: 1;
+        transform: none;
+        transition: none;
     }
 }

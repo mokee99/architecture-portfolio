@@ -6,6 +6,19 @@
         <title>Belma Kovačević | Architect & Architectural Designer</title>
         <meta name="description" content="Portfolio of Belma Kovačević, architect and architectural designer. Explore residential, commercial, and conceptual projects focused on thoughtful design, functionality, and contemporary architecture.">
         <meta name="theme-color" content="#ECEBEB">
+        <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="./assets/favicon/android-chrome-192x192.png">
+        <!-- Open Graph -->
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Belma Kovacevic | Architecture Portfolio">
+        <meta property="og:description" content="Architecture portfolio featuring residential, interior, and conceptual design projects.">
+        <meta property="og:url" content="https://tvoj-domen.com/">
+        <meta property="og:image" content="https://tvoj-domen.com/assets/images/opengraph.jpg">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+        <meta property="og:site_name" content="Belma Kovacevic">
+        <meta property="og:locale" content="en_US">
         <link rel="stylesheet" href="./css/style.css">
         <link rel="stylesheet" href="./css/home.css">
         <script src="./js/menu.js" defer></script>
@@ -16,140 +29,187 @@
         <div id="menu-component" data-menu="./menu.html"></div>
 
 
-        <section id="hero" class="section-hero">
+        <section class="section-hero">
             <div class="container-lg">
                 <div class="hero-content-wrapper">
-                    <h1 class="hero-heading">Belma Kovacevic</h1>
+                    <div class="hero-heading-mask">
+                        <h1 class="hero-heading">Belma Kovacevic</h1>
+                    </div>
+
                     <div class="hero-right-wrapper">
                         <div class="hero-line"></div>
+
                         <div class="hero-text-wrapper">
-                            <span class="hero-text">ARCHITECTURE PORTFOLIO</span>
-                            <span class="hero-text">MARIBOR / BELGRADE</span>
+                            <div class="hero-text-mask">
+                                <span class="hero-text">ARCHITECTURE PORTFOLIO</span>
+                            </div>
+
+                            <div class="hero-text-mask">
+                                <span class="hero-text">MARIBOR / BELGRADE</span>
+                            </div>
+
                             <div class="hero-tablet-line"></div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="hero-image-wrapper">
-                <picture>
-                    <source media="(max-width: 767px)" srcset="./assets/images/home/hero-mobile.webp">
-                    <source media="(max-width: 991px)" srcset="./assets/images/home/hero-tablet.webp">
-                    <img class="hero-image" src="./assets/images/home/hero-desktop.webp" alt="Kayak Centre" loading="eager">
-                </picture>
+
+            <div class="hero-image-reveal">
+                <div class="hero-image-wrapper">
+                    <picture>
+                        <source media="(max-width: 767px)" srcset="./assets/images/home/hero-mobile.webp">
+                        <source media="(max-width: 991px)" srcset="./assets/images/home/hero-tablet.webp">
+                        <img class="hero-image" src="./assets/images/home/hero-desktop.webp" alt="Kayak Centre" loading="eager">
+                    </picture>
+                </div>
             </div>
         </section>
 
         <section id="projects" class="section-work">
-            <div class="container-lg">
-                <h2 class="work-heading">SELECTED WORKS</h2>
-            </div>
-            <div class="project-main-wrapper">
-                <div class="project-card">
+    <div class="container-lg">
+        <h2 class="work-heading reveal-up">SELECTED WORKS</h2>
+    </div>
+
+    <div class="project-main-wrapper">
+
+        <a class="project-card reveal-project" href="./projects/project-one.html">
+            <div class="project-reveal-inner">
                 <picture>
                     <source media="(max-width: 767px)" srcset="./assets/images/home/project-one-mobile.webp">
                     <source media="(max-width: 991px)" srcset="./assets/images/home/project-one-tablet.webp">
-                    <img class="work-img" src="./assets/images/home/project-one-desktop.webp" alt="Kayak Centre">
+                    <img class="work-img" src="./assets/images/home/project-one-desktop.webp" alt="Woodland Retreat House">
                 </picture>
+
                 <div class="work-img-overlay"></div>
-                <div class="container-lg work-container">
+
+                <div class="container-lg work-container project-card-content">
                     <span class="label">01</span>
                     <h3 class="work-small-heading">Woodland Retreat House</h3>
-                    <a class="work-link" href="./projects/project-one.html">VIEW PROJECT</a>
+                    <span class="work-link">VIEW PROJECT</span>
                 </div>
-                </div>
+            </div>
+        </a>
 
-                <div class="project-card">
+        <a class="project-card reveal-project" href="./projects/project-two.html">
+            <div class="project-reveal-inner">
                 <picture>
                     <source media="(max-width: 767px)" srcset="./assets/images/home/project-two-mobile.webp">
                     <source media="(max-width: 991px)" srcset="./assets/images/home/project-two-tablet.webp">
-                    <img class="work-img" src="./assets/images/home/project-two-desktop.webp" alt="Kayak Centre">
+                    <img class="work-img" src="./assets/images/home/project-two-desktop.webp" alt="Bresternica Kayak Center Area">
                 </picture>
+
                 <div class="work-img-overlay"></div>
-                <div class="container-lg work-container">
+
+                <div class="container-lg work-container project-card-content">
                     <span class="label">02</span>
                     <h3 class="work-small-heading tablet-heading">Bresternica Kayak Center Area</h3>
-                    <a class="work-link" href="./projects/project-two.html">VIEW PROJECT</a>
+                    <span class="work-link">VIEW PROJECT</span>
                 </div>
-                </div>
+            </div>
+        </a>
 
-                <div class="project-card">
+        <a class="project-card reveal-project" href="./projects/project-three.html">
+            <div class="project-reveal-inner">
                 <picture>
                     <source media="(max-width: 767px)" srcset="./assets/images/home/project-three-mobile.webp">
                     <source media="(max-width: 991px)" srcset="./assets/images/home/project-three-tablet.webp">
-                    <img class="work-img" src="./assets/images/home/project-three-desktop.webp" alt="Kayak Centre">
+                    <img class="work-img" src="./assets/images/home/project-three-desktop.webp" alt="Cafe Interior in New Belgrade">
                 </picture>
+
                 <div class="work-img-overlay"></div>
-                <div class="container-lg work-container">
+
+                <div class="container-lg work-container project-card-content">
                     <span class="label">03</span>
                     <h3 class="work-small-heading">Cafe Interior in New Belgrade</h3>
-                    <a class="work-link" href="./projects/project-three.html">VIEW PROJECT</a>
+                    <span class="work-link">VIEW PROJECT</span>
                 </div>
-                </div>
+            </div>
+        </a>
 
-                <div class="project-card">
+        <a class="project-card reveal-project" href="./projects/project-four.html">
+            <div class="project-reveal-inner">
                 <picture>
                     <source media="(max-width: 767px)" srcset="./assets/images/home/project-four-mobile.webp">
                     <source media="(max-width: 991px)" srcset="./assets/images/home/project-four-tablet.webp">
-                    <img class="work-img" src="./assets/images/home/project-four-desktop.webp" alt="Kayak Centre">
+                    <img class="work-img" src="./assets/images/home/project-four-desktop.webp" alt="Modular Cube Interior">
                 </picture>
+
                 <div class="work-img-overlay"></div>
-                <div class="container-lg work-container">
+
+                <div class="container-lg work-container project-card-content">
                     <span class="label">04</span>
                     <h3 class="work-small-heading">Modular Cube Interior</h3>
-                    <a class="work-link" href="./projects/project-four.html">VIEW PROJECT</a>
+                    <span class="work-link">VIEW PROJECT</span>
                 </div>
-                </div>
+            </div>
+        </a>
 
-                                <div class="project-card">
+        <a class="project-card reveal-project" href="./projects/project-five.html">
+            <div class="project-reveal-inner">
                 <picture>
                     <source media="(max-width: 767px)" srcset="./assets/images/home/project-five-mobile.webp">
                     <source media="(max-width: 991px)" srcset="./assets/images/home/project-five-tablet.webp">
-                    <img class="work-img" src="./assets/images/home/project-five-desktop.webp" alt="Kayak Centre">
+                    <img class="work-img" src="./assets/images/home/project-five-desktop.webp" alt="Kovinotehna">
                 </picture>
+
                 <div class="work-img-overlay"></div>
-                <div class="container-lg work-container">
+
+                <div class="container-lg work-container project-card-content">
                     <span class="label">05</span>
                     <h3 class="work-small-heading">Kovinotehna</h3>
-                    <a class="work-link" href="./projects/project-five.html">VIEW PROJECT</a>
-                </div>
-                </div>
-
-            </div>
-
-
-
-        </section>
-
-        <section id="about" class="section-about">
-            <div class="about-wrapper">
-                <span class="about-label">ABOUT</span>
-                <div class="about-line"></div>
-                <p class="about-paragraph">I am an architecture master’s student interested in the relationship between architecture, landscape and everyday life.</p>
-                <p class="about-paragraph">My work explores atmosphere, materiality and the emotional experience of space.</p>
-            </div>
-        </section>
-
-
-        <section id="contact" class="cta-section">
-            <div class="cta-main-wrapper">
-                <div class="cta-bg-wrapper">
-                    <picture>
-                    <source media="(max-width: 767px)" srcset="./assets/images/home/cta-background-mobile.webp">
-                    <source media="(max-width: 991px)" srcset="./assets/images/home/cta-background-tablet.webp">
-                    <img  class="cta-bg-img" src="./assets/images/home/cta-backgorund.webp" alt="City block">
-                    </picture>
-                    <div class="cta-overlay"></div>
-                </div>
-                <div class="cta-content-wrapper">
-                    <p class="cta-paragraph">Feel free to reach out for collaborations, projects or conversations about architecture and space.</p>
-                    <img class="cta-icon" src="./assets/icons/compass-symbol.svg" alt="Compas icon">
-                    <div class="cta-info-wrapper">
-                        <span class="cta-info">Linkedin</span>
-                        <span class="cta-info">hello@belmakovacevic.com</span>
-                    </div>
+                    <span class="work-link">VIEW PROJECT</span>
                 </div>
             </div>
-        </section>
+        </a>
+
+    </div>
+</section>
+ 
+<section id="about" class="section-about">
+    <div class="about-sticky">
+        <div class="about-wrapper">
+            <span class="about-label">ABOUT</span>
+            <div class="about-line"></div>
+
+            <div class="about-content">
+                <div class="about-text about-text-first">
+                    <p class="about-paragraph">I am an architecture master’s student interested in the relationship between architecture, landscape and everyday life.</p>
+                    <p class="about-paragraph">My work explores atmosphere, materiality and the emotional experience of space.</p>
+                </div>
+
+                <div class="about-text about-text-second">
+                    <p class="about-paragraph">I approach each project through careful observation of context, movement and human needs.</p>
+                    <p class="about-paragraph">I aim to create thoughtful, functional spaces that feel grounded in their surroundings and meaningful to the people who use them.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="cta-section">
+    <div class="cta-main-wrapper">
+        <div class="cta-bg-wrapper">
+            <picture>
+                <source media="(max-width: 767px)" srcset="./assets/images/home/cta-background-mobile.webp">
+                <source media="(max-width: 991px)" srcset="./assets/images/home/cta-background-tablet.webp">
+                <img class="cta-bg-img" src="./assets/images/home/cta-backgorund.webp" alt="City block">
+            </picture>
+
+            <div class="cta-overlay"></div>
+        </div>
+
+        <div class="cta-content-wrapper reveal-cta">
+            <p class="cta-paragraph">Feel free to reach out for collaborations, projects or conversations about architecture and space.</p>
+
+            <img class="cta-icon" src="./assets/icons/compass-symbol.svg" alt="Compass icon">
+
+            <div class="cta-info-wrapper">
+                <span class="cta-info">Linkedin</span>
+                <span class="cta-info">hello@belmakovacevic.com</span>
+            </div>
+        </div>
+    </div>
+</section>
 
         <div id="footer-component" data-footer="./footer.html"></div>
 

@@ -56,7 +56,9 @@ function loadMenu() {
         return;
     }
 
-    fetch(menuPath)
+    fetch(menuPath, {
+        cache: "no-store",
+    })
         .then((response) => {
             if (!response.ok) {
                 throw new Error("Menu could not be loaded.");
@@ -82,6 +84,55 @@ function loadMenu() {
         });
 }
 
+function initFooterReveal() {
+    const footer = document.querySelector("#footer-component .footer");
+    const footerHeading = document.querySelector(
+        "#footer-component .footer-heading-reveal"
+    );
+    const footerInfo = document.querySelector(
+        "#footer-component .footer-info-reveal"
+    );
+
+    if (!footer || !footerHeading || !footerInfo) {
+        console.error("Footer reveal elements are missing.");
+        return;
+    }
+
+    const footerObserver = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+
+                const isMobile = window.matchMedia(
+                    "(max-width: 767px)"
+                ).matches;
+
+                const footerDelay = isMobile ? 0 : 400;
+
+                window.setTimeout(() => {
+                    footerHeading.classList.add("is-visible");
+
+                    window.setTimeout(() => {
+                        footerInfo.classList.add("is-visible");
+                    }, 180);
+                }, footerDelay);
+
+                observer.unobserve(entry.target);
+            });
+        },
+        {
+            threshold: 0.1,
+            rootMargin: "0px 0px -5% 0px",
+        }
+    );
+
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            footerObserver.observe(footer);
+        });
+    });
+}
+
 function loadFooter() {
     const footerComponent = document.querySelector("#footer-component");
 
@@ -94,7 +145,9 @@ function loadFooter() {
         return;
     }
 
-    fetch(footerPath)
+    fetch(footerPath, {
+        cache: "no-store",
+    })
         .then((response) => {
             if (!response.ok) {
                 throw new Error("Footer could not be loaded.");
@@ -111,7 +164,9 @@ function loadFooter() {
                 ? "../assets/images/home/footer-logo.svg"
                 : "./assets/images/home/footer-logo.svg";
 
-            const logo = document.querySelector("[data-footer-logo]");
+            const logo = document.querySelector(
+                "#footer-component [data-footer-logo]"
+            );
 
             if (logo) {
                 logo.src = assetsPath;
@@ -128,7 +183,9 @@ function loadFooter() {
                     link.href = `${homePath}#${section}`;
                 });
 
-            const scrollTopLink = document.querySelector("[data-scroll-top]");
+            const scrollTopLink = document.querySelector(
+                "#footer-component [data-scroll-top]"
+            );
 
             if (scrollTopLink) {
                 if (isProjectPage) {
@@ -136,8 +193,8 @@ function loadFooter() {
                 } else {
                     scrollTopLink.href = "#hero";
 
-                    scrollTopLink.addEventListener("click", (e) => {
-                        e.preventDefault();
+                    scrollTopLink.addEventListener("click", (event) => {
+                        event.preventDefault();
 
                         document.querySelector("#hero")?.scrollIntoView({
                             behavior: "smooth",
@@ -145,6 +202,8 @@ function loadFooter() {
                     });
                 }
             }
+
+            initFooterReveal();
         })
         .catch((error) => {
             console.error(error);
